@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <title>vue-boolzapp</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/CSS/style.css">
+</head>
+<body>
+    <!-- container principale -->
+    <div class="container" id="root">
+        <!-- left side -->
+        <div class="left-side">
+            <div class="profiloUtente d_flex align_center space_between">
+                <div class="d_flex align_center">
+                    <img class="avatar-white" src="./assets/img/avatar_1.jpg" alt="">
+                    <span class="font_size3">Nome Utente</span>
+                </div>
+                
+                <div class="icone">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+            <!-- notifiche -->
+            <div class="notifiche d_flex align_center">
+                <div class="notifica_icona d_flex align_center just_center">
+                    <i class="fas fa-bell-slash"></i>
+                </div>
+                <div class="pl_1">
+                    <p class="font_size3">Ricevi notifiche di nuovi messaggi</p>
+                    <span class="attiva_notifiche">Attiva notifiche desktop</span>
+                </div>
+            </div>
+
+            <!-- cerca contatto -->
+            <div class="bg_cerca p_2">
+                <div class="cerca_contatto d_flex align_center">
+                    <i class="fas fa-search p_1"></i>
+                    <input class="p_1" placeholder="Cerca o inizia una nuova chat">
+                </div>
+            </div>
+            
+            
+            <!-- ciclo v-for per lista di contatti -->
+            <div class="contacts">
+                <ul>
+                    <li v-for="(contact, index) in contacts" class="contact d_flex align_center">
+                        <img :src='"./assets/img/avatar" + contact.avatar + ".jpg"' alt="">
+                        <span>{{contact.name}}</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- right side -->
+        <div class="right-side">
+            <div class="utente-chat d_flex space_between align_center">
+                <div class="d_flex">
+                    <img class="avatar-white" src="./assets/img/avatar_2.jpg" alt="">
+                    <div class="info d_flex column just_center pl_1">
+                        <span>Nome chat</span>
+                        <span class="color_grey">Ultimo accesso oggi alle</span>
+                    </div>
+                </div>
+                
+                <div class="icone">
+                    <i class="fas fa-search p_1"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+            
+            <!-- chat container -->
+            <div class="chat_box">
+                <div class="messaggi">
+                    <div class="sent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et veniam quisquam non. Voluptatem vel maiores pariatur modi, cupiditate dolores animi dolor dolorem consequatur! Iure rerum voluptate sint tempore cum! Dolor.</div>
+                    <div class="recived">lorem</div>
+                    <div class="sent"> pore cum! Dolor.</div>
+                </div>
+                <div class="scrivi_messaggio d_flex p_2 align_center space_between">
+                    <i class="far fa-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                    <i class="fas fa-microphone"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
