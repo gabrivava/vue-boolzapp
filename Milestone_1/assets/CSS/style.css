@@ -64,6 +64,7 @@ body {
 }
 .bg_cerca {
     background-color: #FAFAFA;
+    height: 75px;
 }
 .color_grey {
     color: grey;
@@ -73,6 +74,7 @@ body {
 .notifiche {
     background-color: #8EDAFC;
     padding: 1.5rem 1rem;
+    height: 100px;
 }
 .notifiche div .fas {
     color: #8EDAFC;
@@ -142,4 +144,55 @@ body {
     border: none;
     border-radius: 5px;
     padding-left: 1rem;
+}
+/* messagi chat */
+.messaggi {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+    height: calc(100% - 80px);
+    overflow-y: auto;
+}
+.sent {
+    background-color: #D5F9BA;
+    min-width: 200px;
+    width: fit-content;
+    max-width: 600px;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+    align-self: flex-end;
+}
+.recived {
+    align-self: flex-start;
+    background-color: white;
+    min-width: 200px;
+    width: fit-content;
+    max-width: 600px;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+}
+
+/* contacts */
+.contacts {
+    background-color: white;
+    height: calc(100% - 255px);
+    overflow-y: auto;
+}
+.contact {
+    list-style: none;
+    border-top: 1px solid #f0f0f0;
+    height: 110px;
+}
+.contacts li img {
+    height: 80px;
+    border-radius: 50%;
+    background-color: #F2F2F2;
+    margin-left: 1.5rem;
+}
+.contact span {
+    align-self: flex-start;
+    padding: 1rem;
+    font-size: x-large;
 }
