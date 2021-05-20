@@ -53,9 +53,9 @@
             <!-- ciclo v-for per lista di contatti -->
             <div class="contacts">
                 <ul>
-                    <li v-for="contact in contacts" class="contact d_flex align_center">
-                        <img src="./assets/img/avatar_3.jpg" alt="">
-                        <span>Nome</span>
+                    <li v-for="(contact, index) in contacts" class="contact d_flex align_center">
+                        <img :src='"./assets/img/avatar" + contact.avatar + ".jpg"' alt="">
+                        <span>{{contact.name}}</span>
                     </li>
                 </ul>
             </div>
