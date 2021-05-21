@@ -3,7 +3,6 @@ const app = new Vue({
 
     data: {
         contattoCorrente: 0,
-        activeMessages : [],
         /* dati ptofili chat */
         contacts: [
             {
@@ -95,12 +94,14 @@ const app = new Vue({
 
     methods: {
         activeContact(index) {
-            this.activeMessages = [];
-            this.activeMessages.push(this.contacts[index].messages);
             console.log(index);
             return this.contattoCorrente = index;
         },
 
+        lastMessage(i) {
+            let lunghezza = this.contacts[i].messages.length;
+            return Number(lunghezza);
+        }
         
     }
 
@@ -110,3 +111,5 @@ const app = new Vue({
 
 //milestone 1 ✔
 //Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
+// Milestone 2 
+//Visualizzazione dimanica delle chat

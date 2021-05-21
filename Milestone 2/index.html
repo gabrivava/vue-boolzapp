@@ -58,6 +58,7 @@
                     class="contact d_flex align_center">
                         <img :src='"./assets/img/avatar" + contact.avatar + ".jpg"' alt="">
                         <span>{{contact.name}}</span>
+                        <div>{{contact.messages[lastMessage(index)]}}</div>
                         <div>{{}}</div>
                     </li>
                 </ul>
@@ -87,7 +88,8 @@
             <div class="chat_box">
                 <div class="messaggi">
                     <div v-for="message in contacts[contattoCorrente].messages" :class="message.status">
-                        <div >{{message.text}}</div>
+                        <div>{{message.text}}</div>
+                        <div class="ora_msg">{{message.date}}</div>
                     </div>
                 </div>
                 <div class="scrivi_messaggio d_flex p_2 align_center space_between">
