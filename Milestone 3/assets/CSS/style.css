@@ -1,0 +1,207 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse */
+body {
+    background: linear-gradient(180deg, #009688 100px, #009688 0px, #DDDBD1 0px, #D2DBDC 100%);
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+.container {
+    background-color: #EAEAEA;
+    height: 90vh;
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+}
+.left-side {
+    width: 30%;
+    height: 100%;
+}
+.right-side {
+    width: 70%;
+    height: 100%;
+    border-left: 1px solid #E0E0E0;
+}
+.avatar-white {
+    border-radius: 50%;
+    height: 60px;
+}
+.fas {
+    font-size: 1.7rem;
+    color: #B1B1B1;
+    margin: 0 0.5rem;
+}
+/* utility */
+.d_flex {
+    display: flex;
+}
+.column {
+    flex-direction: column;
+}
+.align_center {
+    align-items: center;
+}
+.just_center {
+    justify-content: center;
+}
+.space_between {
+    justify-content: space-between;
+}
+.p_1 {
+    padding: 0.5rem;
+}
+.p_2 {
+    padding: 1rem;
+}
+.pl_1 {
+    padding-left: 0.5rem;
+}
+.font_size3 {
+    font-size: 1.3rem;
+}
+.bg_cerca {
+    background-color: #FAFAFA;
+    height: 75px;
+}
+.color_grey {
+    color: grey;
+}
+
+/* alert notifiche */
+.notifiche {
+    background-color: #8EDAFC;
+    padding: 1.5rem 1rem;
+    height: 100px;
+}
+.notifiche div .fas {
+    color: #8EDAFC;
+}
+.notifiche .notifica_icona {
+    background-color: white;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+.attiva_notifiche {
+    color: #4F7485;
+    text-decoration: underline;
+}
+
+/* cerca contatto */
+.cerca_contatto {
+    background-color: white;
+    border-radius: 2px;
+    border: 1px solid #f0f0f0;
+}
+.cerca_contatto input {
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    height: 40px;
+    width: 80%;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* left side */
+.profiloUtente,
+.utente-chat {
+    height: 80px;
+    padding: 0 1rem;
+}
+.profiloUtente span {
+    margin-left: 0.5rem;
+}
+
+/* right side */
+.chat_box {
+    height: calc(100% - 80px);
+    width: 100%;
+    background-image: url('../img/mine.jpg');
+    position: relative;
+}
+.scrivi_messaggio {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 80px;
+    background-color: #F3EEEA;
+}
+.scrivi_messaggio [class*="fa-"] {
+    color: #6B7376;
+    font-size: 2rem;
+}
+.scrivi_messaggio input {
+    width: 100%;
+    height: 100%;
+    margin: 0 1rem;
+    border: none;
+    border-radius: 5px;
+    padding-left: 1rem;
+}
+/* messagi chat */
+.messaggi {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+    height: calc(100% - 80px);
+    overflow-y: auto;
+}
+.sent {
+    background-color: #D5F9BA;
+    min-width: 200px;
+    width: fit-content;
+    max-width: 600px;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+    align-self: flex-end;
+}
+.received {
+    align-self: flex-start;
+    background-color: white;
+    min-width: 200px;
+    width: fit-content;
+    max-width: 600px;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+}
+.ora_msg {
+    color: grey;
+    font-size: small;
+    text-align: right;
+    padding-top: 0.5rem;
+}
+
+/* contacts */
+.contacts {
+    background-color: white;
+    height: calc(100% - 255px);
+    overflow-y: auto;
+}
+.contact {
+    list-style: none;
+    border-top: 1px solid #f0f0f0;
+    height: 110px;
+}
+.contacts li img {
+    height: 80px;
+    border-radius: 50%;
+    background-color: #F2F2F2;
+    margin-left: 1.5rem;
+}
+.contact span {
+    align-self: flex-start;
+    padding: 1rem;
+    font-size: x-large;
+}
+.active {
+    background-color: #009688;
+}
