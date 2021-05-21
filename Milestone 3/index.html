@@ -95,7 +95,7 @@
                 </div>
                 <div class="scrivi_messaggio d_flex p_2 align_center space_between">
                     <i class="far fa-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" v-model="newMsg" @keyup.enter="pushNewMsg(newMsg), rispostaBot()" placeholder="Scrivi un messaggio">
                     <i class="fas fa-microphone"></i>
                 </div>
             </div>
@@ -104,6 +104,8 @@
 
     <!-- js -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <!-- day.js -->
+    <script src="https://unpkg.com/dayjs"></script>
     <script src="./main.js"></script>
 </body>
 </html>

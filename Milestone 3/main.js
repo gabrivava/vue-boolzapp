@@ -90,9 +90,9 @@ const app = new Vue({
                 ],
             },
         ],
-    /* /fine contats */   
+    /* /fine contats */    
     lunghezzaChat: 0,
-    text: 0,
+    newMsg: '',
     }, //  fine data
 
     methods: {
@@ -100,7 +100,18 @@ const app = new Vue({
             return this.contattoCorrente = index;
         },
         
-    }
+        pushNewMsg(el) {
+            this.contacts[this.contattoCorrente].messages.push({date: dayjs().format("DD/MM/YYYY H:mm:ss"), text: el, status: 'sent'});
+            this.newMsg = '';
+        },
+
+        rispostaBot() {
+            setTimeout(() => {
+                this.contacts[this.contattoCorrente].messages.push({date: dayjs().format("DD/MM/YYYY H:mm:ss"), text: 'ok!', status: 'received'});
+            }, 1000)
+        }
+    },
+
 
     
 
@@ -110,3 +121,6 @@ const app = new Vue({
 //Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
 // Milestone 2 
 //Visualizzazione dimanica delle chat
+// Milestone 3
+//●Aggiunta di un messaggio: l’utente scrive un testonella parte bassa e digitando“enter” il testo viene aggiunto al thread sopra, comemessaggio verde
+//●Risposta dall’interlocutore:ad ogni inserimento diun messaggio, l’utente riceveràun “ok” come risposta, che apparirà dopo 1 secondo.
