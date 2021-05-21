@@ -111,9 +111,17 @@ const app = new Vue({
             }, 1000)
         },
 
-        checkContatto() {
-            let elementiCercati = document.querySelectorAll('[title*=ricercaContatto]')
-            console.log(elementiCercati);
+        checkVisible() {
+            this.contacts.forEach(contact => {
+                let el = this.ricercaContatto.split('');
+                let arrayNome = contact.name.toLowerCase().split('');
+                console.log(arrayNome);
+                if (el.every( elem => arrayNome.includes(elem))) {
+                    return contact.visible = true;
+                } else {
+                    return contact.visible = false;
+                }
+            });
         }
     },
 
