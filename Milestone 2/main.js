@@ -3,6 +3,7 @@ const app = new Vue({
 
     data: {
         contattoCorrente: 0,
+        
         /* dati ptofili chat */
         contacts: [
             {
@@ -90,18 +91,14 @@ const app = new Vue({
             },
         ],
     /* /fine contats */   
+    lunghezzaChat: 0,
+    text: 0,
     }, //  fine data
 
     methods: {
         activeContact(index) {
-            console.log(index);
             return this.contattoCorrente = index;
         },
-
-        lastMessage(i) {
-            let lunghezza = this.contacts[i].messages.length;
-            return Number(lunghezza);
-        }
         
     }
 
