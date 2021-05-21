@@ -87,7 +87,7 @@
             <div class="chat_box">
                 <div class="messaggi">
                     <div v-for="(messages,index) in activeMessages">
-                        <div>{{messages[index]}}</div>
+                        <div v-for="message in messages">{{message.text}}</div>
                     </div>
                 </div>
                 <div class="scrivi_messaggio d_flex p_2 align_center space_between">
