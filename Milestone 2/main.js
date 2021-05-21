@@ -101,9 +101,7 @@ const app = new Vue({
             return this.contattoCorrente = index;
         },
 
-        stampaMessaggi() {
-            var el = this.activeMessages.messages.text
-        }
+        
     }
 
     
