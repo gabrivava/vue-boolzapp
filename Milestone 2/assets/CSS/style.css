@@ -163,7 +163,7 @@ body {
     margin: 0.5rem;
     align-self: flex-end;
 }
-.recived {
+.received {
     align-self: flex-start;
     background-color: white;
     min-width: 200px;
