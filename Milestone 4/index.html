@@ -54,15 +54,15 @@
             <div class="contacts">
                 <ul>
                     <li v-for="(contact, index) in contacts" v-if="ricercaContatto === '' " @click="activeContact(index)"
-                    :class="contattoCorrente === index ? 'active' : '' "
+                    :title="contact.name" :class="contattoCorrente === index ? 'active' : '' " 
                     class="contact d_flex align_center">
                         <img :src='"./assets/img/avatar" + contact.avatar + ".jpg"' alt="">
                         <span>
                             {{contact.name}}
                         </span>
                     </li>
-                    <li v-if="">
-                        
+                    <li v-if="checkContatto">
+                        ciao
                     </li>
                 </ul>
             </div>

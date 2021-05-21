@@ -112,7 +112,7 @@ const app = new Vue({
         },
 
         checkContatto() {
-            let elementiCercati = document.querySelectorAll('[class*=]')
+            let elementiCercati = document.querySelectorAll('[title*=ricercaContatto]')
             console.log(elementiCercati);
         }
     },
