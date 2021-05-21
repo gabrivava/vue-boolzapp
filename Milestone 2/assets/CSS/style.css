@@ -196,3 +196,6 @@ body {
     padding: 1rem;
     font-size: x-large;
 }
+.active {
+    background-color: #009688;
+}

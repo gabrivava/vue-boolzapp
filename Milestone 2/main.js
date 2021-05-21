@@ -2,7 +2,8 @@ const app = new Vue({
     el: '#root',
 
     data: {
-
+        contattoCorrente: 0,
+        activeMessages : [],
         /* dati ptofili chat */
         contacts: [
             {
@@ -89,10 +90,23 @@ const app = new Vue({
                 ],
             },
         ],
-        /* /fine contats */
-
+    /* /fine contats */   
     }, //  fine data
 
+    methods: {
+        activeContact(index) {
+            this.activeMessages = [];
+            this.activeMessages.push(this.contacts[index].messages);
+            console.log(index);
+            return this.contattoCorrente = index;
+        },
+
+        stampaMessaggi() {
+            var el = this.activeMessages.messages.text
+        }
+    }
+
+    
 
 })
 
