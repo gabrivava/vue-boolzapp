@@ -93,6 +93,7 @@ const app = new Vue({
     /* /fine contats */    
     lunghezzaChat: 0,
     newMsg: '',
+    optionMsg: '',
     }, //  fine data
 
     methods: {
@@ -122,9 +123,19 @@ const app = new Vue({
                     return contact.visible = false;
                 }
             });
+        },
+        /* Milestone 5 */
+        attiva_info(index) {
+            if (this.optionMsg === '') {
+                this.optionMsg = index;
+            } else {
+                this.optionMsg = '';
+            }
         }
     },
 
+
+        
 
     
 
