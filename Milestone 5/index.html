@@ -58,9 +58,18 @@
                     :class="contattoCorrente === index ? 'active' : '' " 
                     class="contact d_flex align_center">
                         <img :src='"./assets/img/avatar" + contact.avatar + ".jpg"' alt="">
-                        <span>
-                            {{contact.name}}
-                        </span>
+                        <div class="d_flex column p_1">
+                            <span>
+                                {{contact.name}}
+                            </span>
+                            <div class="ultimo_messaggio">
+                                {{lastMessage(index)}}
+                            </div>
+                        </div>
+                        <div class="ora_ultimo_messaggio">
+                            {{lastMsgDate(index)}}
+                        </div>
+                        
                     </li>
                 </ul>
             </div>

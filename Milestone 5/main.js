@@ -131,6 +131,18 @@ const app = new Vue({
             } else {
                 this.optionMsg = '';
             }
+        },
+
+        lastMessage(index) {
+            const chatLength = this.contacts[index].messages.length;
+            const ultimoMsg = this.contacts[index].messages[chatLength - 1].text;
+            return ultimoMsg;
+        },
+
+        lastMsgDate(index) {
+            const chatLength = this.contacts[index].messages.length;
+            const ultimoMsg = this.contacts[index].messages[chatLength - 1].date;
+            return ultimoMsg;
         }
     },
 
