@@ -83,7 +83,9 @@
                     <img class="avatar-white" :src='"./assets/img/avatar" + contacts[contattoCorrente].avatar + ".jpg"' alt="">
                     <div class="info d_flex column just_center pl_1">
                         <span>{{contacts[contattoCorrente].name}}</span>
-                        <span class="color_grey">Ultimo accesso oggi alle</span>
+                        <div class="color_grey">Ultimo accesso 
+                            <span>{{lastMsgDate(contattoCorrente)}}</span>
+                        </div>
                     </div>
                 </div>
                 
