@@ -98,6 +98,7 @@ const app = new Vue({
 
     methods: {
         activeContact(index) {
+            this.optionMsg = ''
             return this.contattoCorrente = index;
         },
         
