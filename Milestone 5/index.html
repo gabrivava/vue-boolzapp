@@ -99,13 +99,18 @@
             <!-- chat container -->
             <div class="chat_box">
                 <div class="messaggi">
-                    <div v-for="(message,index) in contacts[contattoCorrente].messages"         :class="message.status" class="messaggio">
+                    <div v-for="(message,index) in contacts[contattoCorrente].messages"         
+                        :class="message.status" class="messaggio">
                         <div class="pr_2">{{message.text}}</div>
                         <div class="ora_msg">{{message.date}}</div>
                         <div class="option" @click="attiva_info(index)">
                             <ul :class="index === optionMsg ? 'visible' : '' ">
-                                <li>Message info</li>
-                                <li>Delete message</li>
+                                <li @click.stop="openinfo(index)" id="info_msg">Message info 
+                                    <div>
+                                        {{infoMsg}}
+                                    </div>
+                                </li>
+                                <li @click="deleteMessage(index)" id="deleteMsg">Delete message</li>
                             </ul>
                             <i class="fas fa-angle-down"></i>
                         </div>

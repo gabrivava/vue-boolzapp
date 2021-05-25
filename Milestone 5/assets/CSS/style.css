@@ -212,6 +212,15 @@ body {
     top: 10px;
     right: 10px;
 }
+#info_msg {
+    cursor: pointer;
+}
+#info_msg div {
+    color: grey;
+}
+#deleteMsg {
+    cursor: pointer;
+}
 
 /* contacts */
 .contacts {

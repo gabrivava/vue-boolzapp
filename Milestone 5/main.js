@@ -94,6 +94,7 @@ const app = new Vue({
     lunghezzaChat: 0,
     newMsg: '',
     optionMsg: '',
+    infoMsg: '',
     }, //  fine data
 
     methods: {
@@ -131,19 +132,45 @@ const app = new Vue({
                 this.optionMsg = index;
             } else {
                 this.optionMsg = '';
+                this.infoMsg = '';
             }
         },
 
         lastMessage(index) {
             const chatLength = this.contacts[index].messages.length;
-            const ultimoMsg = this.contacts[index].messages[chatLength - 1].text;
-            return ultimoMsg;
+            if (chatLength < 1) {
+                ultimoMsg = '';
+            } else {
+                const ultimoMsg = this.contacts[index].messages[chatLength - 1].text;
+                return ultimoMsg
+            }
+            
         },
 
         lastMsgDate(index) {
             const chatLength = this.contacts[index].messages.length;
-            const ultimoMsg = this.contacts[index].messages[chatLength - 1].date;
-            return ultimoMsg;
+            if (chatLength < 1) {
+                ultimoMsg = '';
+            } else {
+                const ultimoMsgDate = this.contacts[index].messages[chatLength - 1].date;
+                return ultimoMsgDate
+            }
+            
+        },
+        openinfo(index) {
+            if (this.infoMsg === '') {
+            const info = this.contacts[this.contattoCorrente].messages[index];
+            this.infoMsg = `Ora: ${dayjs(info.date).format('hh:mm:ss')}
+                            Status: ${info.status}`
+                            ;
+            return this.infoMsg;
+            } else {
+                return this.infoMsg = '';
+            }
+        },
+        deleteMessage(index) {
+            const msg = this.contacts[this.contattoCorrente].messages[index];
+            this.contacts[this.contattoCorrente].messages.splice(index, 1)
         }
     },
 
